@@ -1,0 +1,79 @@
+.rcfield_container {
+  &.rc_checkbox_group {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+  .rc_checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    height: 100%;
+    margin: 0;
+    color: #707070;
+
+    a {
+      color: #052460;
+      text-decoration: none;
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+
+      &:checked ~ .checkmark {
+        background-color: #052460;
+        border-color: #052460;
+      }
+      &:checked ~ .checkmark:after {
+        display: block;
+      }
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+      height: 20px;
+      width: 20px;
+      border-radius: 2px;
+      border: 2px solid #757575;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 5px;
+        top: 1px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+
+    .check-label {
+      font-weight: 500;
+      font-size: 13px;
+    }
+  }
+}

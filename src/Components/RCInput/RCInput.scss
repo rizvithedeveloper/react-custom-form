@@ -1,0 +1,139 @@
+.rcfield_container {
+  position: relative;
+  color: rgba(0, 0, 0, 0.87);
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.1876em;
+  letter-spacing: 0.00938em;
+  font-size: 1rem;
+  box-sizing: border-box;
+  align-items: center;
+  margin-bottom: 15px;
+
+  .rc_label {
+    color: rgba(0, 0, 0, 0.54);
+    padding: 0;
+    font-size: 1rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.00938em;
+    position: absolute;
+    left: 20px;
+    top: 13px;
+    bottom: 0;
+    height: fit-content;
+    transition: 0.2s all;
+  }
+
+  .rc_input {
+    padding: 12px 14px !important;
+    background: none;
+    border: 1px solid #b2b2b2;
+    border-radius: 100px;
+    background: #e8e8e8;
+    color: rgba(0, 0, 0, 0.87);
+    padding: 0;
+    font-size: 1rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.00938em;
+    width: 100%;
+    transition: 0.2s all;
+
+    &:hover {
+      border-color: rgba(0, 0, 0, 0.6);
+    }
+
+    &::-webkit-input-placeholder {
+      opacity: 0;
+      transition: 0.2s all;
+    }
+  }
+
+  /* Password Field */
+  .rcpassword_field {
+    .rcpassword_iconBtn {
+      width: 21px;
+      height: 21px;
+      position: absolute;
+      right: 20px;
+      top: 13px;
+      cursor: pointer;
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  /* Shrinkable */
+  &.shrinkable {
+    .rc_label {
+      font-size: 13px;
+      top: -6px;
+      color: #052460;
+      padding: 0 4px;
+      z-index: 1;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 50%;
+        background: #e8e8e8;
+        left: 0;
+        bottom: 1px;
+        width: 100%;
+        z-index: -1;
+      }
+    }
+
+    .rc_input {
+      border: 2px solid #052460;
+      outline: none;
+
+      &::-webkit-input-placeholder {
+        opacity: 1;
+      }
+    }
+  }
+
+  /* Warning */
+  &.warning {
+    .rc_input {
+      border-color: #e74c3c !important;
+    }
+
+    .rc_label {
+      color: #e74c3c;
+    }
+  }
+
+  /* Success */
+  &.success {
+    .rc_input {
+      border-color: #2ecc71 !important;
+    }
+  }
+
+  /* RC Message */
+  .rc_message {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    margin-left: 15px;
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 500;
+
+    &.warning {
+      color: #e74c3c;
+    }
+    &.success {
+      color: #2ecc71;
+    }
+  }
+}

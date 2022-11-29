@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import RCButton from "./Components/RCButton";
 import RCCheckbox from "./Components/RCCheckbox";
 import RCForm from "./Components/RCForm";
 import RCInput from "./Components/RCInput";
@@ -39,6 +40,18 @@ function App() {
             "First Name should not be empty",
             "Space not allowed",
           ]}
+        />
+
+        <RCInput
+          id="firstName"
+          type="text"
+          label="First Name"
+          placeholder="Enter your name"
+          value={firstName}
+          name="firstName"
+          handleChange={handleChange}
+          validations={["length-5"]}
+          validErrors={["Length should be 5"]}
         />
 
         <RCInput
@@ -122,6 +135,8 @@ function App() {
             "First Name should not be empty",
           ]}
         />
+
+        <RCButton>Submit</RCButton>
       </RCForm>
     </div>
   );

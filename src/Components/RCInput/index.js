@@ -11,6 +11,7 @@ export default function RCInput({
   handleChange,
   validations,
   validErrors,
+  setFormErrors,
 }) {
   const [isMounted, setMounted] = useState(false);
   const [isShrinkable, setShrinkable] = useState(false);
@@ -40,6 +41,8 @@ export default function RCInput({
         ? validations[getlengthIdx].split("-")[1]
         : undefined;
       let isLength = length ? value.length === Number(length) : false;
+
+      console.log("IsLength", getlengthIdx);
 
       // ## Min Length Validation
       let getMinLengthIdx = extractIndexFromArr(validations, "minLength");
